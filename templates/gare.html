@@ -1,0 +1,92 @@
+{% extends 'main.html' %} 
+{% load static %} 
+{% block title %} {% endblock %} 
+{% block head %}
+<h1>Gare</h1>
+{% endblock head%}
+ {% block content %}
+
+
+<div class="container my-5">
+    <div class="row">
+        
+        {% for gare in gare %}
+  
+        <div class="col-lg-3 mb-3">
+          <div class="shadow position-relative" >
+            <span class="position-absolute top-0 start-0 badge   shadow  " style="background-color: rgba(0, 0, 0, 0.795);">14.02 - 18.02</span>
+              </span>
+            <a href=""> 
+            {% for img in gare.product_image.all %}
+              {% if img.is_feature %}
+              <img class="img-fluid "  alt="{{img.img.alt_text}}" src="{{ img.img.url }}" style="border-top-left-radius: 0.25rem;
+              border-top-right-radius: 0.25rem;
+              border-bottom-right-radius: 0 ;
+              border-bottom-left-radius: 0 ; ">
+               
+              {% endif %}
+            {% endfor %}
+       
+        
+        </a>
+           
+       
+            {% if gare.stato == 'Verde' %} 
+            <a href=" " class="btn    w-100 btn-success  "  style="border-top-left-radius: 0 ;
+            border-top-right-radius: 0 ;
+            border-bottom-right-radius: 0.25rem;
+            border-bottom-left-radius: 0.25rem;"> {{gare.nomeGara}} </a>
+            {% endif %} 
+            {% if gare.stato == 'Blu' %} 
+            <a href=" " class="btn   w-100 btn-primary  " style="border-top-left-radius: 0 ;
+            border-top-right-radius: 0 ;
+            border-bottom-right-radius: 0.25rem;
+            border-bottom-left-radius: 0.25rem;" > {{gare.nomeGara}} </a>
+            {% endif %} 
+            {% if gare.stato == 'Rosso' %} 
+            <a href=" "   class="btn  w-100 btn-danger  " style="border-top-left-radius: 0 ;
+            border-top-right-radius: 0 ;
+            border-bottom-right-radius: 0.25rem;
+            border-bottom-left-radius: 0.25rem;" > {{gare.nomeGara}} </a>
+            {% endif %} 
+            {% if gare.stato == 'Bianco' %} 
+            <a href=" "   class="btn    w-100 btn-light  " style="border-top-left-radius: 0 ;
+            border-top-right-radius: 0 ;
+            border-bottom-right-radius: 0.25rem;
+            border-bottom-left-radius: 0.25rem;" > {{gare.nomeGara}} </a>
+            {% endif %}
+
+             
+            </div>
+       
+            
+           
+                    
+          </div>
+      
+    
+                
+       
+       
+        {% endfor %}
+
+    </div>
+</div>
+ 
+ 
+       
+               
+ 
+  
+ 
+{% endblock content %}
+
+    
+
+
+
+
+   
+
+
+

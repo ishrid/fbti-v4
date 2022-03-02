@@ -1,0 +1,204 @@
+{% extends 'main.html' %} 
+{% load static %} 
+{% block title %} {% endblock %} 
+{% block head %} {% endblock head%}
+ {% block content %}
+
+  
+     
+ <div class="container-fluid bg-primary " style="background-image: linear-gradient(rgba(9, 56, 106, 0.7), rgba(9, 56, 106, 0.7)), url(../static/img/IMG_9664.jpeg); 
+  
+ background-attachment: fixed;
+ background-position: center;
+ background-repeat: no-repeat;
+ background-size: cover;
+ margin-top: 100px;" 
+ 
+ >
+     
+  
+    <div class="container py-3">
+       <div class="row">
+           <div class=" py-5 mb-4 text-white  ">
+               <div class="col-md-6 px-0">
+                 <h1 class="display-4 ">COMMISSIONI</h1>
+                 <p class="lead my-3">Multiple lines of text that form the lede, informing new readers quickly and efficiently about what’s most interesting in this post’s contents.</p>
+                 <a href="" class="btn btn-outline-light">prova</a>
+               </div>
+             </div> 
+    </div>
+  
+
+   </div>
+</div>   
+
+ 
+<div class="container mt-5">
+    <div class="row">
+
+        <h2>Collaboratori Commissione Arbitri</h2>
+        
+      
+ 
+
+{% for commissioneArbitri in commissioneArbitri %}
+        
+      
+ 
+
+
+<div class="col-lg-4 col-md-6 mt-3">
+
+    <div class=" border-danger bg-danger shadow mb-2" style="border: 2px solid; border-radius: 0.25rem;">
+        <div class="card-body text-white">{{commissioneArbitri.ruolo}}</div>
+        <div class="card-body " style="background-color: #ffffff; border-bottom-left-radius: 0.18rem; border-bottom-right-radius: 0.18rem;"> 
+          <a   style="text-decoration: none; color: #272727;"  data-bs-toggle="collapse" href="#a{{ forloop.counter }}" role="button" aria-expanded="false" aria-controls="comitatoCollapse">
+            <h5 class="card-title">{{commissioneArbitri.nome}} <i class="fas fa-info-circle"></i></h5>
+        </a>
+        
+        
+          <div class="collapse" id="a{{ forloop.counter }}">
+             
+             
+
+
+
+<ul class="list-group border-danger">
+    {% if commissioneArbitri.via != None %}
+    <li class="list-group-item"><i class="fas fa-home"></i> {{commissioneArbitri.via}}, <b>{{commissioneArbitri.cap}}</b></li>
+    {%endif%}
+    {% if commissioneArbitri.fisso != None %}
+    <li class="list-group-item"><i class="fas fa-phone-alt"></i> {{commissioneArbitri.fisso}}</li>
+    {%endif%}
+    {% if commissioneArbitri.mobile != None %}
+    <li class="list-group-item"><i class="fas fa-mobile-alt"></i> {{commissioneArbitri.mobile}}</li>
+    {%endif%}
+    {% if commissioneArbitri.email != None %}
+    <li class="list-group-item"><i class="fas fa-envelope"></i>  {{commissioneArbitri.email}}</li>
+    {%endif%}
+  </ul>
+
+          </div>
+        
+        
+        </div>
+    </div>
+    
+    </div>
+
+{% endfor %}
+    </div>
+</div>
+<div class="container mt-5">
+    <div class="row">
+
+        <h2>Collaboratori Commissione Arbitri</h2>
+        
+      
+ 
+
+{% for commissioneArbitri in commissioneArbitri %}
+        
+      
+ 
+
+
+<div class="col-lg-4 col-md-6 mt-3">
+
+    <div class=" border-danger bg-danger shadow mb-2" style="border: 2px solid; border-radius: 0.25rem;">
+        <div class="card-body text-white">{{commissioneArbitri.ruolo}}</div>
+        <div class="card-body " style="background-color: #ffffff; border-bottom-left-radius: 0.18rem; border-bottom-right-radius: 0.18rem;"> 
+          <h5 class="card-title">{{commissioneArbitri.nome}}  </h5>
+         
+        
+        
+           
+             
+             
+ 
+     
+     {% if commissioneArbitri.fisso != None %}
+    <p ><i class="fas fa-phone-alt"></i> {{commissioneArbitri.fisso}}</p>
+    {%endif%}
+    {% if commissioneArbitri.mobile != None %}
+    <p  ><i class="fas fa-mobile-alt"></i> {{commissioneArbitri.mobile}}</p>
+    {%endif%} 
+   
+
+          </div>
+        
+        
+        </div>
+    </div>
+    
+     
+
+{% endfor %}
+    </div>
+</div>
+
+ 
+<div class="container mt-5">
+    <div class="row">
+
+        <h2>Collaboratori Commissione Giovani</h2>
+        
+      
+ 
+
+{% for commissioneGiovani in commissioneGiovani %}
+        
+      
+ 
+
+
+<div class="col-lg-4 col-md-6 mt-3">
+
+    <div class=" border-danger bg-danger shadow mb-2" style="border: 2px solid; border-radius: 0.25rem;">
+        <div class="card-body text-white">{{commissioneGiovani.ruolo}}</div>
+        <div class="card-body " style="background-color: #ffffff; border-bottom-left-radius: 0.18rem; border-bottom-right-radius: 0.18rem;"> 
+          <a   style="text-decoration: none; color: #272727;"  data-bs-toggle="collapse" href="#b{{ forloop.counter }}" role="button" aria-expanded="false" aria-controls="comitatoCollapse">
+            <h5 class="card-title">{{commissioneGiovani.nome}} <i class="fas fa-info-circle"></i></h5>
+        </a>
+        
+        
+          <div class="collapse" id="b{{ forloop.counter }}">
+             
+             
+
+
+
+<ul class="list-group border-danger">
+    {% if commissioneGiovani.via != None %}
+    <li class="list-group-item"><i class="fas fa-home"></i> {{commissioneGiovani.via}}, <b>{{commissioneGiovani.cap}}</b></li>
+    {%endif%}
+    {% if commissioneGiovani.fisso != None %}
+    <li class="list-group-item"><i class="fas fa-phone-alt"></i> {{commissioneGiovani.fisso}}</li>
+    {%endif%}
+    {% if commissioneGiovani.mobile != None %}
+    <li class="list-group-item"><i class="fas fa-mobile-alt"></i> {{commissioneGiovani.mobile}}</li>
+    {%endif%}
+    {% if commissioneGiovani.email != None %}
+    <li class="list-group-item"><i class="fas fa-envelope"></i>  {{commissioneGiovani.email}}</li>
+    {%endif%}
+  </ul>
+
+          </div>
+        
+        
+        </div>
+    </div>
+    
+    </div>
+
+{% endfor %}
+    </div>
+</div>
+
+       
+  
+  
+ 
+{% endblock content %}
+
+ 

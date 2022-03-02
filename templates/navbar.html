@@ -1,0 +1,126 @@
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top  " style="background-color: rgb(9, 56, 106);  " >
+    <div class="container ">
+
+
+      <a class="navbar-brand" href="/"><img src="../static/img/logo2.png" height="80px" alt="" srcset=""></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+           
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  FEDERAZIONE
+                </a>
+                <ul class="dropdown-menu " aria-labelledby="navbarDropdown" style="width: 35vw;" >
+                     <div class="p-2 row">
+                        <div class=" col-7 "   >
+                            <li><h6 class="dropdown-header">REGOLAMENTI</h6>
+                            </li>
+                            
+
+                            {% for regolamenti in regolamenti%}
+                            {% if regolamenti.attivo == True %}
+                            <li><a class="dropdown-item" href="{{regolamenti.pdf.url}}" target="_blank">{{regolamenti.nome}}</a></li> 
+                
+                            {% endif %}
+                            
+                            {% endfor %}
+                        </div>            <div class=" col-1 bg-primary"   > 
+                             
+                        
+                             
+    </div> 
+                            <div class=" col-4"   > 
+                                <li><h6 class="dropdown-header">DIRIGENTI</h6>
+                                </li>
+                            
+                                <li><a class="dropdown-item" href=" ">Comitato</a></li>
+                                    <li><a class="dropdown-item" href=" ">Commissioni</a></li> 
+                               
+        </div> 
+                          
+    </div>
+                       
+                         
+                      
+                     
+                    
+                </ul>
+              </li>
+    
+           
+          <li class="nav-item">
+            <a class="nav-link" href=" ">SOCIETÀ</a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link" href=" ">GARE</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              CALENDARI
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              {% for calendari in calendari %}
+              {% if calendari.attivo == True %}
+              <li><a class="dropdown-item" href="{{calendari.pdf.url}}" target="_blank">{{calendari.nome}}</a></li> 
+  
+              {% endif %}
+              
+              {% endfor %}
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                CLASSIFICHE
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              
+            {% for classifiche in classifiche %}
+            {% if classifiche.attivo == True %}
+            <li><a class="dropdown-item" href="{{classifiche.pdf.url}}" target="_blank">{{classifiche.nome}}</a></li> 
+
+            {% endif %}
+            
+            {% endfor %}
+            </ul>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'albiDoro' %}">ALBI D'ORO</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              CATEGORIE
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              {% for categorie in categorie %}
+              {% if categorie.attivo == True %}
+              <li><a class="dropdown-item" href="{{categorie.pdf.url}}" target="_blank">{{categorie.nome}}</a></li> 
+  
+              {% endif %}
+              
+              {% endfor %}
+            </ul>
+          </li>
+           
+          <li class="nav-item">
+            <a class="nav-link" href="#">GIOVANI</a>
+          </li>
+           
+           
+          
+           
+           
+           
+        </ul>
+        
+      </div>
+
+
+    </div>
+  </nav>
+
+ 
