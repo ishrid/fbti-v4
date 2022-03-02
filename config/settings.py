@@ -21,7 +21,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY') or 'django-insecure-+wu7pg30ctu6!+itzz#$oj=gh$9netathy8361fg2@$(x@(pga'
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG=str(os.environ.get('DEBUG'))=='1'
@@ -41,7 +41,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'webbase.apps.WebbaseConfig'
+    'webbase.apps.WebbaseConfig',
+    'storages',
+    
+
 ]
 
 MIDDLEWARE = [
@@ -151,17 +154,19 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 # URL: https://fbtiv4.fra1.digitaloceanspaces.com
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
   
 STATIC_ROOT = BASE_DIR / 'staticfiles-cdn'
+MEDIA_ROOT = BASE_DIR / "staticfiles-cdn" / "uploads"
 
-MEDIA_URL = 'media/'
 
-MEDIA_ROOT = BASE_DIR / 'media'
+from .cdn.conf import * # noqa
+
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
